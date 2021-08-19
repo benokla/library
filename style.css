@@ -1,0 +1,14 @@
+.inputFormContainer {
+    padding: 20px;
+    width: 300px;
+    height: 130px;
+    border: 1px solid black;
+    position: relative;
+}
+.input {
+    width: 200px;
+    height: 15px;
+    position: absolute;
+    right: 20px;
+    padding: 1px;
+}
