@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <button id="newBook">New Book</button>
-    <div class="inputFormContainer">
-        <label class="inputLabel" for="titleInput">Title</label>
-        <input type="text" class="input" id="titleInput">
-        <br><br>
-        <label class="inputLabel" for="authorInput">Author</label>
-        <input type="text" class="input"id="authorInput">
-        <br><br>
-        <label class="inputLabel" for="pagesInput">Pages</label>
-        <input type="number" class="input" id="pagesInput">
-        <br><br>
-        <form>
-            <input type="radio" id="read" name="read" value="true" checked>
-            <label for="read">Read</label>
-                
-            <input type="radio" id="notRead" name="read" value="false">
-            <label for="notRead">Not Read</label>
-        </form>
+    <div class="wrapper">
+        <button id="newBook">New Book</button>
+        <div class="inputWrapper"></div>
+            <!-- <div class="inputFormContainer">
+                <label class="inputLabel" for="titleInput">Title</label>
+                <input type="text" class="input" id="titleInput">
+                <br><br>
+                <label class="inputLabel" for="authorInput">Author</label>
+                <input type="text" class="input"id="authorInput">
+                <br><br>
+                <label class="inputLabel" for="pagesInput">Pages</label>
+                <input type="number" class="input" id="pagesInput">
+                <br><br>
+                <form id="radioForm">
+                    <input type="radio" id="read" name="read" value="true" checked>
+                    <label for="read">Read</label>
+                        
+                    <input type="radio" id="notRead" name="read" value="false">
+                    <label for="notRead">Not Read</label>
+                </form>
+                <button id="addBook">Add</button>
+            </div> -->
+        <div class="bookWrapper"> </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>

@@ -12,3 +12,22 @@
     right: 20px;
     padding: 1px;
 }
+#addBook {
+    display: inline-block;
+    position: absolute;
+    right: 20px
+}
+#radioForm {
+    display: inline-block;
+}
+.book {
+    width: 170px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 0px 10px 0px 10px;
+}
+.deleteBtn {
+    margin: 10px auto;
+    display: block;
+    width: 60px;
+}
