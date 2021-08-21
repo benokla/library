@@ -1,5 +1,7 @@
+// Array where all the books are stored
 let myLibrary = [];
 
+// Book constructor
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -23,6 +25,7 @@ function displayBooks(books) {
     const bookWrapper = document.querySelector(".bookWrapper");
 
     for(let i = 0; i < books.length; i++) {
+        // Container for each book
         const book = document.createElement("div");
         book.classList.add("book");
 
@@ -34,10 +37,11 @@ function displayBooks(books) {
         const deleteBtn = document.createElement("input");
 
         deleteBtn.setAttribute("type", "button");
-        deleteBtn.classList.add("deleteBtn")
-        readSwitch.classList.add("readSwitch")
+        deleteBtn.classList.add("deleteBtn");
+
+        readSwitch.classList.add("readSwitch");
         readSwitch.setAttribute("type", "checkbox");
-        readSwitch.style.marginLeft = "20px"
+    
         title.style.textAlign = "center"
         read.style.display = "inline"
 
@@ -73,24 +77,20 @@ function displayBooks(books) {
             const bookWrapper = document.querySelector(".bookWrapper");
             bookWrapper.innerHTML = "";
             displayBooks(myLibrary)
+        })
     })
 
     const readSwitches = document.querySelectorAll(".readSwitch");
-    readSwitches.forEach((readSwitch) => {
-        readSwitch.addEventListener("change", (e) => {
+    readSwitches.forEach((readSwitchBox) => {
+        readSwitchBox.addEventListener("change", (e) => {
             myLibrary[e.target.dataset.index].toggleRead()
             const bookWrapper = document.querySelector(".bookWrapper");
             bookWrapper.innerHTML = "";
             displayBooks(myLibrary)
         })
     })
-})
 }
 
-addBookToLibrary("buch1", "max1", 111, true);
-addBookToLibrary("buch2", "max2", 222, false);
-
-displayBooks(myLibrary)
 
 
 const newBookBtn = document.querySelector("#newBook");
@@ -135,7 +135,14 @@ function createInputForm() {
                 read = false;
             }
 
+            if(title == "") {
+                alert("You need to input a title!")
+                return
+            }
+
             addBookToLibrary(title, author, pages, read);
+
+            inputWrapper.innerHTML = "";
 
             const bookWrapper = document.querySelector(".bookWrapper");
             bookWrapper.innerHTML = "";
@@ -146,3 +153,9 @@ function createInputForm() {
     }
     
 }
+
+//Dummy books
+addBookToLibrary("Buch1", "max1", 111, true);
+addBookToLibrary("Buch2", "max2", 222, false);
+
+displayBooks(myLibrary)
