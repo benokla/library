@@ -1,20 +1,18 @@
-// Array where all the books are stored
 let myLibrary = [];
 
-// Book constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-Book.prototype.toggleRead = function() {
-    if(this.read == true) {
-        this.read = false;
-    } else {
-        this.read = true;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
+    toggleRead() {
+        if(this.read == true) {
+            this.read = false;
+        } else {
+            this.read = true;
+    }}
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -23,9 +21,9 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks(books) {
     const bookWrapper = document.querySelector(".bookWrapper");
+    bookWrapper.innerHTML = "";
 
     for(let i = 0; i < books.length; i++) {
-        // Container for each book
         const book = document.createElement("div");
         book.classList.add("book");
 
@@ -54,9 +52,11 @@ function displayBooks(books) {
         readSwitch.dataset.index = i;
 
         if(books[i].read) {
+            book.classList.add("read")
             readSwitch.checked = true;
             read.textContent = "Already read"
         } else {
+            book.classList.add("notRead")
             readSwitch.checked = false;
             read.textContent = "Not read yet"
         }
@@ -74,8 +74,6 @@ function displayBooks(books) {
     deleteBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             myLibrary.splice(e.target.dataset.index, 1)
-            const bookWrapper = document.querySelector(".bookWrapper");
-            bookWrapper.innerHTML = "";
             displayBooks(myLibrary)
         })
     })
@@ -83,9 +81,7 @@ function displayBooks(books) {
     const readSwitches = document.querySelectorAll(".readSwitch");
     readSwitches.forEach((readSwitchBox) => {
         readSwitchBox.addEventListener("change", (e) => {
-            myLibrary[e.target.dataset.index].toggleRead()
-            const bookWrapper = document.querySelector(".bookWrapper");
-            bookWrapper.innerHTML = "";
+            myLibrary[e.target.dataset.index].toggleRead();
             displayBooks(myLibrary)
         })
     })
@@ -141,17 +137,13 @@ function createInputForm() {
             }
 
             addBookToLibrary(title, author, pages, read);
-
             inputWrapper.innerHTML = "";
 
             const bookWrapper = document.querySelector(".bookWrapper");
             bookWrapper.innerHTML = "";
             displayBooks(myLibrary)
         })
-    } else {
-        return
-    }
-    
+    } else return
 }
 
 //Dummy books

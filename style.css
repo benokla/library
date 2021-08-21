@@ -7,17 +7,20 @@ body {
     height: 100vh;
     width: 100vw;
     position: relative;
+    background-color: #bacec3;
 }
 #newBook{
     padding: 18px;
     margin: 100px auto;
     width: 150px;
-    border: 1px solid black;
     border-style: none;
-    background: rgba(66, 168, 88, 0.808);
+    border: 5px solid rgb(255, 255, 255);
+    background: rgb(66, 168, 88);
     font-size: 20px;
     font-weight: 500;
     color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .inputFormContainer {
     padding: 20px;
@@ -25,6 +28,7 @@ body {
     height: 130px;
     border: 5px solid rgb(255, 255, 255);
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .input {
     width: 200px;
@@ -44,10 +48,10 @@ body {
 .book {
     width: 200px;
     height: 170px;
-    border: 4px solid rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
     padding: 0px 10px 0px 10px;
     margin: 30px;
-}
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
 .deleteBtn {
     margin: 10px auto;
     display: block;
@@ -70,10 +74,15 @@ h3 {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(245deg, rgba(67, 247, 208, 0.74), rgb(165, 185, 176));
 }
 .inputWrapper {
     display: flex;
     height: 150px;
     justify-content: center;
+}
+.read{
+    background-color: rgb(133, 209, 133);
+}
+.notRead{
+    background-color: rgb(252, 158, 158);
 }
